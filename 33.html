@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Скрытый HTML за изображением</title>
+    <style>
+        #hiddenContent {
+            display: none; /* Изначально скрываем секцию */
+            margin-top: 20px;
+        }
+        #image {
+            cursor: pointer; /* Указываем, что изображение кликабельно */
+        }
+    </style>
+</head>
+<body>
+    <!-- Картинка -->
+    <img id="image" src="Снимок.JPG" alt="Картинка" width="300">
+
+    <!-- Скрытый HTML -->
+    <div id="hiddenContent">
+        <!-- Ваш HTML-код будет здесь -->
+        <div>
+            <!-- Вставляем содержимое из файла integrated_natgeo.html -->
+            <iframe src="integrated_natgeo.html" style="width:100%; height:500px; border:none;"></iframe>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript для показа скрытого содержимого
+        const image = document.getElementById('image');
+        const hiddenContent = document.getElementById('hiddenContent');
+
+        image.addEventListener('click', () => {
+            hiddenContent.style.display = 'block'; // Показываем содержимое
+        });
+    </script>
+</body>
+</html>
